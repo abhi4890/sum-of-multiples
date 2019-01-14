@@ -14,4 +14,11 @@ describe "sum_of_multiples" do
       expect(object.calculate_sum(4)).to eq(3)
     end
   end
+
+  context "when there is one multiple within the limit" do
+    it "returns 3" do
+      object = SumOfMultiples.new(43, 47)
+      expect(object.calculate_sum(10000)).to eq(2203160)
+    end
+  end
 end

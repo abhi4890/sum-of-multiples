@@ -1,28 +1,23 @@
 class SumOfMultiples
-  @numbers
-  def initialize(*numbers)
-    @numbers = numbers
+  @factors
+  def initialize(*factors)
+    @factors = factors
   end
   def calculate_sum(limit)
-    i = 1
-    j=0         #index for iterating through the array @numbers
+    array_of_multiples = []
     sum = 0
-    loop do
-      if i >= limit
-        break
-      end
-      j = 0
+    @factors.each do |a_factor|
+      i = 1
       loop do
-        if j >= @numbers.length
+        if a_factor * i >= limit
           break
         end
-        if i % @numbers[j] == 0
-          sum += i
-          break
+        if !array_of_multiples.include?(a_factor * i)
+        sum += a_factor * i
         end
-        j = j + 1
+        array_of_multiples << a_factor * i
+        i = i + 1
       end
-      i = i + 1
     end
     sum
   end

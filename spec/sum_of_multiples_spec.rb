@@ -36,5 +36,10 @@ describe "sum_of_multiples" do
     end
   end
 
-  
+  context "when testing for large input data" do
+    it "returns 39614537" do
+      object = SumOfMultiples.new(2, 3, 5, 7, 11)
+      expect(object.calculate_sum(10000)).to eq(39614537)
+    end
+  end
 end

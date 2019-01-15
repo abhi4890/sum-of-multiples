@@ -28,4 +28,13 @@ describe "sum_of_multiples" do
       expect(object.calculate_sum(0)).to eq(0)
     end
   end
+
+  context "when testing for multiples of more than two numbers" do
+    it "returns 37" do
+      object = SumOfMultiples.new(2, 3, 5)
+      expect(object.calculate_sum(10)).to eq(37)
+    end
+  end
+
+  
 end
